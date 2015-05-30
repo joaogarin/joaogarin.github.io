@@ -1,0 +1,781 @@
+@charset "UTF-8";
+/*------------------------------------------------------------------
+[Master Stylesheet]
+
+Project:	Admin theme
+Version:	1.1
+Ownership:  Joao Garin
+
+-------------------------------------------------------------------*/
+/************************************
+Extra components
+*************************************/
+/************************************
+Tools
+*************************************/
+/**
+ * Tells the u mixin to use pixel values only.
+ */
+/**
+ * Returns a number from a string.
+ */
+/**
+ * Base font size without the units.
+ * @access private
+ */
+/**
+ * Base line height without the units.
+ * @access private
+ */
+/**
+ * Outputs the given value as pixel or rems depending on the given unit and the on the $px-only. It
+ * acts as rem fallback for ie <= 8.
+ * @link http://davidwalsh.name/rem-px-browser-function-sass
+ * @param {px | rem} $values - A value which should be rendered to rem.
+ * @param {boolean} $use-px-only - Determines if the function should return px based on the rems.
+ * @example scss
+ *     $base-font-size: 14px;
+ *     $px-only: false;
+ *     font-size: u(2rem);
+ *     // css output:
+ *     font-size: 2rem;
+ *
+ *     $base-font-size: 14px;
+ *     $px-only: true;
+ *     font-size: u(2rem);
+ *     // css output:
+ *     font-size: 28px;
+ */
+/**
+ * Get the line height for the given font size, which should be in pixels or rem.
+ * Forked from inuit css.
+ * @link https://github.com/inuitcss/tools.mixins
+ * @param {px | rem} $font-size - The font size.
+ * @param {boolean} $use-px-only - Determines if the return value should be in pxs. Use full when setting the
+ *     line-height in a :before or :after due to a ie bug: https://connect.microsoft.com/IE/feedback/details/776744
+ */
+/**
+ * Adjust the line height to the given font size, which should be in pixels or rem.
+ * Forked from inuit css.
+ * @link https://github.com/inuitcss/tools.mixins
+ * @param {px | rem} $font-size - The new font size.
+ * @param {rem | auto} $font-size (auto) - If auto the mixin will automatically calculate the right size to
+ *     keep the vertical rhythm.
+ * @param {boolean} $lineheight-px-only - Determines if the line height value should be in pxs. Use full when using this
+ *     mixin in a :before or :after due to a ie bug: https://connect.microsoft.com/IE/feedback/details/776744
+ */
+/**
+ * Calculates the space needed for the given lines and a amount of space was already is used by
+ * element another.
+ * @param {number} $lines - Amount of lines that should be used for the space.
+ * @param {px|rem} $subtract - Amount of space that should be subtracted from the lines.
+ * @return {rem|px} Either rem or pixels depending on the $px-only variable.
+ */
+/**
+ * Adds a margin top without destroying the vertical rhythm.
+ */
+/**
+ * Adds a margin bottom without destroying the vertical rhythm.
+ */
+/**
+ * Adds a padding top without destroying the vertical rhythm.
+ */
+/**
+ * Adds a padding bottom without destroying the vertical rhythm.
+ */
+/**
+ * Applies a border to one side of an element, while fixing the vertical rhythm using padding.
+ * Forked from
+ * @link https://gist.github.com/ry5n/2026666
+ * @param {top | left | right | bottom} $side - The side to which the border should be applied.
+ * @param {list|none} $border - A list in the order of border width in px, border style and border color.
+ * @param {number} $lines (1) - The number of lines which should be used as padding to keep the vertical
+ *     rhythm.
+ */
+/**
+ * Apply an equal border to all sides, while fixing the vertical rhythm using padding.
+ * Forked from
+ * @link https://gist.github.com/ry5n/2026666
+ * @param {list|none} $border - A list in the order of border width in px, border style and border color.
+ * @param {number} $lines (1) - The number of lines which should be used as padding to keep the
+ *     vertical rhythm.
+ */
+/**
+ * Removes the the border and padding from an element.
+ */
+/**
+ * Apply a border on a given side and adds a padding and margin to that same side.
+ * @param {top | left | right | bottom} $side - The side to which the border should be applied.
+ * @param {list|none} $border - A list in the order of border width in px, border style and border color.
+ * @param {number} $lines (1) - The number of lines which should be used as padding and margin to
+ *     keep the vertical rhythm.
+ */
+/************************************
+BASE CSS
+*************************************/
+/**
+ * Breakpoint for very small viewports with a one column layout.
+ */
+/**
+ * Breakpoint for slightly bigger viewports with a column layout.
+ */
+/**
+ * Medium, tablet like viewports using a 12 column layout.
+ */
+/**
+ * Big viewport using the full width using a 24 column layout.
+ */
+/**
+ * Dense pixel ration devices.
+ */
+/*
+* Background color for the theme
+*/
+/*
+* Menu color
+*/
+/*
+* Background for the computer mockup
+*/
+/*
+* Body text color
+*/
+/*
+* Primary color
+*/
+/*
+* Color normal grey
+*/
+/*
+* Color grey light
+*/
+/*
+* Color grey dark
+*/
+/*
+* Button primary color
+*/
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  font-family: inherit;
+  font-weight: 300;
+  line-height: 1.1;
+  color: #333; }
+
+h1 {
+  margin: 0.67rem 0;
+  font-size: 2.5rem; }
+
+.text-muted {
+  color: #C5C5C5; }
+
+.text-center {
+  text-align: center; }
+
+.btn, .btn-primary {
+  background-image: none;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+  border: none;
+  padding-bottom: 0.7rem;
+  padding-top: 0.7rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  -moz-box-shadow: 0px 0px 0px 0px;
+  -webkit-box-shadow: 0px 0px 0px 0px;
+  -ms-box-shadow: 0px 0px 0px 0px;
+  box-shadow: 0px 0px 0px 0px;
+  text-shadow: 0px 0px 0px; }
+
+.btn-primary {
+  background: #373C43;
+  border-color: #373C43;
+  border: 1px solid #373C43;
+  color: white; }
+
+.btn-primary:hover, .btn-primary:focus {
+  background: #fff;
+  border: 1px solid #36bd8e;
+  color: #36bd8e; }
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important; }
+
+:after, :before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+:after, :before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body {
+  margin: 0; }
+
+/************************************
+LAYOUT
+*************************************/
+html {
+  font-size: 14px; }
+
+body {
+  font-family: "Exo", sans-serif;
+  background: #36bd8e; }
+  body p {
+    font-size: 1.1rem;
+    line-height: 2.1rem;
+    color: #757575; }
+
+a, a:hover {
+  text-decoration: none;
+  color: #36bd8e; }
+
+a:focus, button:focus {
+  outline: none;
+  text-decoration: none; }
+
+html,
+body,
+.main--wrap__view-container,
+#content,
+.main-wrapp,
+.content-wrap {
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%; }
+
+.text-content {
+  background: #fff;
+  padding-bottom: 60px;
+  overflow-y: scroll;
+  margin-left: 2rem;
+  margin-right: 2rem; }
+  @media (min-width: 800px) {
+    .text-content {
+      max-width: 1120px;
+      margin: auto; } }
+
+.content-wrap {
+  background: #fff;
+  position: relative;
+  z-index: 10;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  /* Overlay */ }
+  .content-wrap .content-wrap__content {
+    position: relative;
+    background: #333; }
+  .content-wrap .content-wrap__content::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    content: '';
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    -webkit-transition: opacity 0.3s, -webkit-transform 0s 0.3s;
+    transition: opacity 0.3s, transform 0s 0.3s; }
+
+.menu-wrap a {
+  color: #fff; }
+
+.menu-wrap a:hover,
+.menu-wrap a:focus {
+  color: #fff; }
+
+.menu-wrap {
+  position: absolute;
+  font-weight: 500;
+  opacity: 0;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s; }
+
+/*Menu button*/
+.main--wrap__menu-button {
+  position: fixed;
+  z-index: 1000;
+  border: none;
+  cursor: pointer;
+  background: #36bd8e;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  color: white;
+  top: 45px;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  line-height: 40px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px; }
+  .main--wrap__menu-button .fa {
+    font-size: 15px;
+    margin-left: 10px; }
+
+.main--wrap__menu-button:hover {
+  opacity: 0.8;
+  color: white; }
+
+.main--wrap__menu-button.is-white {
+  color: #fff; }
+
+.main--wrap__menu-button.is-white:hover {
+  color: #fff; }
+
+/*Menu side*/
+.menu-side .menu-side__menu-links {
+  margin-top: 0px;
+  margin-right: 50px;
+  margin-left: 50px; }
+.menu-side .menu-slide__block {
+  color: white;
+  font-size: 1rem;
+  margin-top: 20px;
+  margin-right: 50px;
+  margin-left: 50px;
+  padding-top: 20px;
+  border-top: 1px solid white; }
+  .menu-side .menu-slide__block h4 {
+    color: white; }
+  .menu-side .menu-slide__block p {
+    color: white;
+    font-size: 1rem; }
+
+.menu-side a {
+  display: block;
+  padding-left: 0;
+  padding-right: 0px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 15px;
+  -webkit-transition: all ease 0.3s;
+  -moz-transition: all ease 0.3s;
+  -ms-transition: all ease 0.3s;
+  transition: all ease 0.3s; }
+
+.menu-side a:hover {
+  text-decoration: none; }
+
+/* Shown menu */
+.show-menu .menu-wrap {
+  opacity: 1; }
+
+.show-menu .content-wrap,
+.show-menu .main--wrap__menu-button {
+  -webkit-transform: translate3d(300px, 60px, 0);
+  transform: translate3d(300px, 60px, 0); }
+
+.show-menu .content::before {
+  opacity: 1;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0); }
+
+/*Menu top*/
+.menu-top {
+  line-height: 58px; }
+
+.menu-top .profile {
+  display: inline-block;
+  padding: 8px 10px;
+  line-height: 42px; }
+
+.menu-top .profile,
+.menu-side {
+  width: 300px; }
+
+.menu-top .profile img {
+  float: left;
+  margin-right: 1em;
+  width: 42px;
+  height: auto; }
+
+.menu-top .profile span {
+  color: #fff; }
+
+/*Menu top Icon list*/
+.menu-top .icon-list {
+  display: inline-block;
+  font-size: 1.25em; }
+
+.menu-top .icon-list a {
+  margin: 0 1em 0 0;
+  padding: 0; }
+
+/*TODO - Include breakpoint*/
+@media screen and (max-width: 32em) {
+  .icon-list {
+    padding-left: 1em; } }
+/************************************
+MODULES
+*************************************/
+.wrap {
+  margin: 0 auto;
+  width: 100%;
+  height: 0;
+  padding-top: 58%;
+  /* ratio of image * 100 */
+  overflow: hidden;
+  position: relative;
+  background: #333; }
+
+.mockup {
+  position: absolute;
+  top: 0;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0; }
+
+.mockup::after {
+  content: '';
+  position: absolute;
+  background: rgba(51, 71, 89, 0.5);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; }
+
+.mockup__img {
+  display: block;
+  width: 1900px; }
+
+.screen,
+.mobile {
+  position: absolute;
+  overflow: hidden;
+  z-index: 100;
+  background: #333;
+  outline: 1px solid transparent;
+  -webkit-transform-origin: 0px 0px 0px;
+  transform-origin: 0px 0px 0px; }
+
+.screen {
+  width: 1280px;
+  height: 800px;
+  top: 10px;
+  left: 600px;
+  -webkit-transform: matrix3d(0.45271, 0.13986, 0, -0.0001, -0.0032, 0.67351, 0, 0.00005, 0, 0, 1, 0, 382, 8, 0, 1);
+  transform: matrix3d(0.45271, 0.13986, 0, -0.0001, -0.0032, 0.67351, 0, 0.00005, 0, 0, 1, 0, 382, 8, 0, 1); }
+
+.mobile {
+  width: 320px;
+  height: 480px;
+  top: 850px;
+  left: 525px;
+  -webkit-transform: matrix3d(0.44278, 0.11283, 0, -0.00005, -0.34404, 0.3466, 0, -0.00009, 0, 0, 1, 0, 105, 15, 0, 1);
+  transform: matrix3d(0.44278, 0.11283, 0, -0.00005, -0.34404, 0.3466, 0, -0.00009, 0, 0, 1, 0, 105, 15, 0, 1); }
+
+.slideshow {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  list-style-type: none; }
+
+.slideshow__item {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+  -webkit-transform: translate3d(-100%, 0, 0);
+  transform: translate3d(-100%, 0, 0); }
+
+.slideshow__item.current {
+  pointer-events: auto;
+  z-index: 100;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0); }
+
+.slideshow img {
+  width: 100%; }
+
+.slideshow__item.in--next {
+  -webkit-animation: inNext 0.5s forwards ease-in-out;
+  animation: inNext 0.5s forwards ease-in-out; }
+
+.slideshow__item.out--next {
+  -webkit-animation: outNext 0.5s forwards ease-in-out;
+  animation: outNext 0.5s forwards ease-in-out; }
+
+.slideshow__item.in--prev {
+  -webkit-animation: inPrev 0.5s forwards ease-in-out;
+  animation: inPrev 0.5s forwards ease-in-out; }
+
+.slideshow__item.out--prev {
+  -webkit-animation: outPrev 0.5s forwards ease-in-out;
+  animation: outPrev 0.5s forwards ease-in-out; }
+
+@-webkit-keyframes inPrev {
+  0% {
+    -webkit-transform: translate3d(-30%, 0, 0);
+    transform: translate3d(-30%, 0, 0); }
+  100% {
+    -webkit-transform: none;
+    transform: none; } }
+@keyframes inPrev {
+  0% {
+    -webkit-transform: translate3d(-30%, 0, 0);
+    transform: translate3d(-30%, 0, 0); }
+  100% {
+    -webkit-transform: none;
+    transform: none; } }
+@-webkit-keyframes inNext {
+  0% {
+    -webkit-transform: translate3d(30%, 0, 0);
+    transform: translate3d(30%, 0, 0); }
+  100% {
+    -webkit-transform: none;
+    transform: none; } }
+@keyframes inNext {
+  0% {
+    -webkit-transform: translate3d(30%, 0, 0);
+    transform: translate3d(30%, 0, 0); }
+  100% {
+    -webkit-transform: none;
+    transform: none; } }
+@-webkit-keyframes outPrev {
+  100% {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0); } }
+@keyframes outPrev {
+  100% {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0); } }
+@-webkit-keyframes outNext {
+  100% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0); } }
+@keyframes outNext {
+  100% {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0); } }
+/* Header */
+.slideshow-header {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  text-align: center;
+  z-index: 1000;
+  font-size: 1.5em; }
+
+.slideshow-header h1 {
+  position: absolute;
+  font-weight: 700;
+  font-size: 4.5em;
+  line-height: 1.2;
+  color: #fff;
+  z-index: 1000;
+  padding: 0;
+  margin: 0;
+  left: 0;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  width: 100%;
+  top: 40%;
+  -webkit-transform: translate3d(0, -50%, 0);
+  transform: translate3d(0, -50%, 0); }
+
+.slideshow-header h1 span {
+  display: block;
+  font-size: 35%; }
+
+.slideshow-header h1 a {
+  color: #eff62b; }
+
+.slideshow-header h1 a:hover,
+.slideshow-header h1 a:focus {
+  color: #fff; }
+
+.slideshow-header h1 span::before,
+.slideshow-header h1 span::after {
+  content: ' ― ';
+  font-weight: 200; }
+
+.slideshow-header h1 i {
+  display: block;
+  font-size: 15%;
+  max-width: 40%;
+  margin: 0 auto;
+  line-height: 2;
+  font-style: normal;
+  font-weight: 400; }
+
+@media screen and (max-width: 60em) {
+  .slideshow-header h1 {
+    font-size: 7em; } }
+@media screen and (max-width: 30em) {
+  .wrap {
+    height: 100vh !important;
+    background: #3d4955; }
+
+  .slideshow-header {
+    top: 100%; }
+
+  .slideshow-header h1 {
+    padding-top: 5em; }
+
+  .slideshow-header h1 i {
+    font-size: 42%;
+    max-width: 90%; }
+
+  .codrops-icon {
+    font-size: 1.5em; }
+
+  .codrops-icon span {
+    display: none; } }
+#go_down_slideshow {
+  position: absolute;
+  bottom: 20%;
+  width: 100%;
+  text-align: center;
+  z-index: 1000; }
+  #go_down_slideshow a {
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    border-radius: 100%;
+    border: 3px solid #fff;
+    display: inline-block;
+    cursor: pointer; }
+  #go_down_slideshow .fa {
+    color: #fff;
+    line-height: 60px; }
+
+span.site-intro__separator:before,
+span.site-intro__separator:after {
+  content: '';
+  width: 50px;
+  border-top: 2px solid #373C43;
+  display: inline-block;
+  margin-bottom: 1rem;
+  border-top: 2px solid #36bd8e; }
+  @media (min-width: 800px) {
+    span.site-intro__separator:before,
+    span.site-intro__separator:after {
+      width: 200px; } }
+
+span.site-intro__separator:before {
+  margin-right: 1rem; }
+
+span.site-intro__separator:after {
+  margin-left: 1rem; }
+
+.site-intro__separator .fa {
+  color: #36bd8e; }
+
+.site-intro {
+  padding-bottom: 5rem;
+  padding-top: 5rem;
+  text-align: center; }
+  .site-intro .site-intro__intro-text {
+    padding: 30px 0;
+    max-width: 600px;
+    margin: 0 auto; }
+
+.blog-list {
+  text-align: center; }
+  .blog-list input.form-control {
+    margin-bottom: 3rem;
+    padding: 0.9rem;
+    width: 60%;
+    text-align: center;
+    border-radius: 2px;
+    box-shadow: none;
+    font-size: 14px;
+    font-family: "Exo", sans-serif;
+    border: 1px solid #e5e5e5; }
+    .blog-list input.form-control:focus {
+      -moz-box-shadow: none;
+      -webkit-box-shadow: none;
+      -ms-box-shadow: none;
+      box-shadow: none;
+      border: 1px solid #36bd8e;
+      outline: none; }
+
+.blog-items__container__blog-item {
+  text-align: center;
+  margin-bottom: 8rem; }
+  .blog-items__container__blog-item h2 {
+    margin-bottom: 2rem; }
+  .blog-items__container__blog-item h1 {
+    margin-bottom: 3rem; }
+  .blog-items__container__blog-item .post-body {
+    max-width: 900px;
+    margin: 2rem auto;
+    text-align: left; }
+  .blog-items__container__blog-item .comments {
+    max-width: 900px;
+    margin: 2rem auto;
+    text-align: left; }
+  .blog-items__container__blog-item img {
+    max-width: 100%;
+    height: auto; }
+    @media (min-width: 800px) {
+      .blog-items__container__blog-item img {
+        max-width: 900px; } }
+
+.loading-spinner {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1rem;
+  margin-top: 3rem; }
+
+.loading {
+  box-sizing: border-box;
+  position: relative;
+  display: inline-block;
+  padding: 0.5em;
+  vertical-align: middle;
+  text-align: center;
+  background-color: transparent;
+  border: 5px solid transparent;
+  border-top-color: #36bd8e;
+  border-bottom-color: #36bd8e;
+  border-radius: 50%; }
+
+.outer {
+  -webkit-animation: spin 1s infinite;
+  -moz-animation: spin 1s infinite;
+  -o-animation: spin 1s infinite;
+  animation: spin 1s infinite; }
+
+.inner {
+  -webkit-animation: spin 1s infinite;
+  -moz-animation: spin 1s infinite;
+  -o-animation: spin 1s infinite;
+  animation: spin 1s infinite; }
+
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotateZ(360deg); } }
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotateZ(360deg); } }
+@-o-keyframes spin {
+  100% {
+    -moz-transform: rotateZ(360deg); } }
+@keyframes spin {
+  100% {
+    transform: rotateZ(360deg); } }
+
+/*# sourceMappingURL=main.css.map */

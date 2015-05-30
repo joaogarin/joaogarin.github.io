@@ -1,0 +1,64 @@
+<div id="blog-wrap" class="content-wrap" data-ng-controller="BlogSingleCtrl">
+
+    <div id="blog_home" class="text-content blog-items">
+
+        <div class="site-intro">
+
+            <a href="#/">
+                <img alt="logo_dark" src="images/logo_green.png"/>
+            </a>
+
+            <p class="site-intro__intro-text">
+                Hi, my name Joao. I love taking travelling, programming and sports. I also enjoy coffee very much. Thank you for visiting my blog.
+            </p>
+
+            <span class="site-intro__separator">
+                <i class="fa fa-2x fa-list">
+
+                </i>
+            </span>
+
+        </div>
+
+        <div class="container" data-ng-hide="!BlogItem.image_url">
+            <div class="blog-items__container__blog-item">
+
+                <h1 class="blog-title">
+                    {{BlogItem.title}}
+                </h1>
+
+                <img alt="blog-image" src="{{BlogItem.image_url}}"/>
+
+                <p class="post-body" ng-bind-html="BlogItem.body">
+
+                </p>
+
+                <div class="comments">
+                  <div id="disqus_thread"></div>
+                  <script type="text/javascript">
+                    /* * * CONFIGURATION VARIABLES * * */
+                    var disqus_shortname = 'joaogarinblog';
+
+                    /* * * DON'T EDIT BELOW THIS LINE * * */
+                    (function() {
+                      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                    })();
+                  </script>
+                  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="loading-spinner" ng-show="!BlogItem.image_url">
+            <div class="loading-spinner__wrap-spinner">
+                <div class="loading outer">
+                    <div class="loading inner"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div><!-- /content-wrap -->

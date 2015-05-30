@@ -1,0 +1,24 @@
+
+#go_down_slideshow{
+  position:absolute;
+  bottom:20%;
+  width:100%;
+  text-align:center;
+  z-index:1000;
+
+  a{
+    color: $background--color;
+    width: 60px;
+    height: 60px;
+    @include border-radius(100%);
+    border: 3px solid $background--color;
+    display: inline-block;
+    cursor:pointer;
+  }
+
+  .fa{
+    color:$background--color;
+    line-height: 60px;
+  }
+
+}

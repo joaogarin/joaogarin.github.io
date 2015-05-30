@@ -1,0 +1,57 @@
+<!doctype html>
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Monkey themes - Drupal headless</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link href='http://fonts.googleapis.com/css?family=Exo:400,500,600,700,500italic,400italic,600italic,700italic' rel='stylesheet' type='text/css'>
+
+        <!-- Include Fonts from the theme fonts directory -->
+        <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.min.css">
+
+        <!-- Include Jquery in the vendor folder -->
+
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+
+        <!-- Latest compiled and minified CSS -->
+        <!--<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+
+        &lt;!&ndash; Optional theme &ndash;&gt;
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+
+        &lt;!&ndash; Latest compiled and minified JavaScript &ndash;&gt;
+        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>-->
+
+        <!-- Theme's own CSS file -->
+        <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="styles/vendor/animate.css">
+
+        <!--[if IE]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+    </head>
+    <body data-ng-app="app" id="app" data-custom-background="" data-off-canvas-nav="" data-ng-controller="AdminAppCtrl">
+
+        <div class="main-wrapp">
+
+            <div data-ng-include=" 'app/views/navigation.html' " id="nav-container"></div>
+
+            <!--<button class="menu-button" id="open-button">Open Menu</button>-->
+            <a class="main--wrap__menu-button" id="open-button"><i class="fa fa-2x fa-list"></i></a>
+
+            <div class="main--wrap__view-container">
+
+                <section data-ng-view="" id="content" class="animate-fade-up"></section>
+            </div>
+        </div>
+
+        <!--Uncomment for deployment using Grunt-->
+        <script type="text/javascript" src="dist/app.js"></script>
+
+    </body>
+</html>
