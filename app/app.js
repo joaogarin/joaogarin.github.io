@@ -33,4 +33,4 @@ var app = angular.module("app", ["ngRoute", "ngAnimate", "ngSanitize", "app.cont
     }
 ]);
 
-window.disqus_shortname = 'joaogarin';
+window.disqus_shortname = 'joaogarinblog';

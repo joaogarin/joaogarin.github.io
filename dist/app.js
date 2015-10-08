@@ -492,7 +492,7 @@ m);return s}]});var B=d.$$minErr("ngRoute");p.provider("$routeParams",function()
     }
 ]);
 
-window.disqus_shortname = 'joaogarin';;angular.module("app").constant('config',{
+window.disqus_shortname = 'joaogarinblog';;angular.module("app").constant('config',{
     service_url:'http://joaogarin.com/drupal-8-v2/',
     service_base_path:'/drupal-8-v2/'
 });;angular.module("app.controllers", []).controller("AdminAppCtrl", ["$scope", "$location",
