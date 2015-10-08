@@ -60,12 +60,14 @@ module.exports = function(grunt) {
 
         concat: {
             options: {
-                separator: ';'
+                separator: ';',
+                stripBanners : true,
             },
             dist: {
                 src: ['bower_components/angular/angular.min.js',
                     'bower_components/angular-animate/angular-animate.min.js',
                     'bower_components/angular-sanitize/angular-sanitize.min.js',
+                    'bower_components/angular-disqus/angular-disqus.min.js',
                     'bower_components/angular-route/angular-route.min.js',
                     'bower_components/underscore/underscore-min.js',
                     'scripts/vendor/modernizr.custom.js',

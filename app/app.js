@@ -2,15 +2,21 @@
  Initialize the Angular App
  **************************/
 
-var app = angular.module("app", ["ngRoute", "ngAnimate", "ngSanitize", "app.controllers"]).run(["$rootScope", "$location",
+var app = angular.module("app", ["ngRoute", "ngAnimate", "ngSanitize", "app.controllers","ngDisqus"]).run(["$rootScope", "$location",
     function ($rootScope, $location) {
+
+
 
         $(window).load(function () {
 
         });
 
-    }]).config(["$routeProvider",
-    function ($routeProvider) {
+    }]).config(["$routeProvider", "$locationProvider", "$disqusProvider",
+    function ($routeProvider, $locationProvider, $disqusProvider) {
+
+        $locationProvider.hashPrefix('!');
+        $disqusProvider.setShortname = "joaogarin";
+
         return $routeProvider.when("/", {
             redirectTo: "/home"
         }).when("/home", {
@@ -27,3 +33,4 @@ var app = angular.module("app", ["ngRoute", "ngAnimate", "ngSanitize", "app.cont
     }
 ]);
 
+window.disqus_shortname = 'joaogarin';
