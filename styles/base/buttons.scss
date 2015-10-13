@@ -13,10 +13,9 @@
 }
 
 @mixin button--primary(){
-  background:$button-color--primary;
-  border-color:$button-color--primary;
-  border:1px solid $button-color--primary;
-  color:white;
+  background:$background--color;
+  border:1px solid $menu--background-color;
+  color:$menu--background-color;
 }
 
 .btn{
@@ -31,7 +30,8 @@
 }
 
 .btn-primary:hover,.btn-primary:focus{
-  background:$background--color;
-  border:1px solid $menu--background-color;
-  color:$menu--background-color;
+  background:$button-color--primary;
+  border-color:$button-color--primary;
+  border:1px solid $button-color--primary;
+  color:white;
 }

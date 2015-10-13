@@ -7,6 +7,7 @@ Ownership:  Joao Garin
 
 -------------------------------------------------------------------*/
 $base--font:'Droid Serif', serif;
+$headings-font: 'Source Sans Pro', sans-serif;
 $base-font-size:16px;
 $base-line-height:20px;
 $max-width:1120px;
@@ -50,9 +51,9 @@ LAYOUT
 MODULES
 *************************************/
 
-@import "modules/mockup_slider/mockup_slider_slideshow";
-@import "modules/mockup_slider/mockup_slider_slideshow_header";
-@import "modules/mockup_slider/mockup_slider_go_down";
+//@import "modules/mockup_slider/mockup_slider_slideshow";
+//@import "modules/mockup_slider/mockup_slider_slideshow_header";
+//@import "modules/mockup_slider/mockup_slider_go_down";
 @import "modules/blog_intro/blog_intro";
 @import "modules/blog_items/blog_items_item";
 @import "modules/loading/loading";

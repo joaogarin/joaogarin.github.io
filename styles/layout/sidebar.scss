@@ -99,6 +99,7 @@
     bottom:15px;
   }
   font-size:15px;
+  font-family: $headings-font;
 
   @include transition(all ease 0.3s);
 }

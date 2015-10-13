@@ -21,8 +21,15 @@
 }
 
 .blog-items__container__blog-item{
-  text-align:center;
+  text-align:left;
   margin-bottom:u(8rem);
+  @include breakpoint($breakpoint-narrow){
+    max-width:700px;
+    margin: {
+      left:auto;
+      right:auto;
+    }
+  }
 
   h2{
     margin-bottom:u(2rem);
@@ -32,23 +39,23 @@
     margin-bottom:u(3rem);
   }
   .post-body{
-    max-width:700px;
     margin:u(2rem) auto;
-    text-align:left;
   }
 
   .comments {
-    max-width:700px;
     margin:u(2rem) auto;
   }
 
   img{
     max-width:100%;
     height:auto;
-
-    @include breakpoint($breakpoint-narrow){
-      max-width:700px;
-    }
+  }
+  
+  .full-post {
+    text-align: center;
+    margin-top: 20px;
+    display: inline-block;
+    width: 100%;
   }
 
 }
