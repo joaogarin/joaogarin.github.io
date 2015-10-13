@@ -20,6 +20,16 @@
   box-sizing: border-box;
 }
 
+pre {
+  padding: 20px;
+  border: none;
+  font-size: 14px;
+  background: #fbfcfd;
+  border: 1px solid #DEE2E6;
+  border-radius: 2px;
+  word-wrap: break-word;
+}
+
 body{
   margin: 0;
 }
