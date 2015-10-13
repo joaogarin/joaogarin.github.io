@@ -1,6 +1,6 @@
 @mixin button(){
   background-image: none;
-  @include border-radius(5px);
+  @include border-radius(25px);
   border:none;
   padding:{
     bottom:u(0.7rem);

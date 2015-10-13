@@ -17,6 +17,26 @@ module.exports = function(grunt) {
                 }
             }
         },
+        //Enable this for ruby sass compiler
+        /*sass: {
+         dist: {
+         files: {
+         'styles/styles.css': 'styles/styles.scss'
+         }
+         }
+         },*/
+
+        //Enable this for libsass compiler
+        sass: {
+            options: {
+                sourceMap: true
+            },
+            dist: {
+                files: {
+                    'styles/main.css': 'styles/main.scss'
+                }
+            }
+        },
 
         uglify: {
             dist: {
@@ -93,15 +113,15 @@ module.exports = function(grunt) {
 
         watch: {
             dev: {
-                files: [ 'Gruntfile.js', 'app/*.js', '*.html' ],
-                tasks: [ 'jshint','html2js:dist', 'concat:dist', 'clean:temp','cssmin' ],
+                files: [ 'Gruntfile.js', 'app/*.js', '*.html','styles/*.*','styles/_*.scss' ],
+                tasks: [ 'jshint','html2js:dist','sass', 'concat:dist', 'clean:temp','cssmin' ],
                 options: {
                     atBegin: true
                 }
             },
             min: {
-                files: [ 'Gruntfile.js', 'app/*.js', '*.html' ],
-                tasks: [ 'jshint','html2js:dist', 'concat:dist', 'clean:temp', 'uglify:dist','cssmin' ],
+                files: [ 'Gruntfile.js', 'app/*.js', '*.html','styles/*.*','styles/_*.scss' ],
+                tasks: [ 'jshint','html2js:dist','sass', 'concat:dist', 'clean:temp', 'uglify:dist','cssmin' ],
                 options: {
                     atBegin: true
                 }
@@ -132,6 +152,9 @@ module.exports = function(grunt) {
 
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-sass');
+    //This uses Libsass
+    grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-compress');
     grunt.loadNpmTasks('grunt-contrib-cssmin');

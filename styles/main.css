@@ -156,8 +156,8 @@ BASE CSS
 * Button primary color
 */
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
-  font-family: inherit;
-  font-weight: 300;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600;
   line-height: 1.1;
   color: #333; }
 
@@ -173,10 +173,10 @@ h1 {
 
 .btn, .btn-primary {
   background-image: none;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  border-radius: 5px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  border-radius: 25px;
   border: none;
   padding-bottom: 0.7rem;
   padding-top: 0.7rem;
@@ -224,15 +224,15 @@ body {
 LAYOUT
 *************************************/
 html {
-  font-size: 14px; }
+  font-size: 16px; }
 
 body {
-  font-family: "Exo", sans-serif;
+  font-family: "Droid Serif", serif;
   background: #36bd8e; }
   body p {
     font-size: 1.1rem;
     line-height: 2.1rem;
-    color: #757575; }
+    color: #333333; }
 
 a, a:hover {
   text-decoration: none;
@@ -340,6 +340,7 @@ body,
   margin-top: 0px;
   margin-right: 50px;
   margin-left: 50px; }
+
 .menu-side .menu-slide__block {
   color: white;
   font-size: 1rem;
@@ -420,6 +421,7 @@ body,
 @media screen and (max-width: 32em) {
   .icon-list {
     padding-left: 1em; } }
+
 /************************************
 MODULES
 *************************************/
@@ -468,16 +470,16 @@ MODULES
   height: 800px;
   top: 10px;
   left: 600px;
-  -webkit-transform: matrix3d(0.45271, 0.13986, 0, -0.0001, -0.0032, 0.67351, 0, 0.00005, 0, 0, 1, 0, 382, 8, 0, 1);
-  transform: matrix3d(0.45271, 0.13986, 0, -0.0001, -0.0032, 0.67351, 0, 0.00005, 0, 0, 1, 0, 382, 8, 0, 1); }
+  -webkit-transform: matrix3d(0.452711185, 0.1398638538, 0, -0.0000952695, -0.0031994388, 0.6735125895, 0, 0.0000494536, 0, 0, 1, 0, 382, 8, 0, 1);
+  transform: matrix3d(0.452711185, 0.1398638538, 0, -0.0000952695, -0.0031994388, 0.6735125895, 0, 0.0000494536, 0, 0, 1, 0, 382, 8, 0, 1); }
 
 .mobile {
   width: 320px;
   height: 480px;
   top: 850px;
   left: 525px;
-  -webkit-transform: matrix3d(0.44278, 0.11283, 0, -0.00005, -0.34404, 0.3466, 0, -0.00009, 0, 0, 1, 0, 105, 15, 0, 1);
-  transform: matrix3d(0.44278, 0.11283, 0, -0.00005, -0.34404, 0.3466, 0, -0.00009, 0, 0, 1, 0, 105, 15, 0, 1); }
+  -webkit-transform: matrix3d(0.4427789704, 0.1128341891, 0, -0.0000536694, -0.3440354993, 0.3465951566, 0, -0.0000946746, 0, 0, 1, 0, 105, 15, 0, 1);
+  transform: matrix3d(0.4427789704, 0.1128341891, 0, -0.0000536694, -0.3440354993, 0.3465951566, 0, -0.0000946746, 0, 0, 1, 0, 105, 15, 0, 1); }
 
 .slideshow {
   padding: 0;
@@ -528,6 +530,7 @@ MODULES
   100% {
     -webkit-transform: none;
     transform: none; } }
+
 @keyframes inPrev {
   0% {
     -webkit-transform: translate3d(-30%, 0, 0);
@@ -535,6 +538,7 @@ MODULES
   100% {
     -webkit-transform: none;
     transform: none; } }
+
 @-webkit-keyframes inNext {
   0% {
     -webkit-transform: translate3d(30%, 0, 0);
@@ -542,6 +546,7 @@ MODULES
   100% {
     -webkit-transform: none;
     transform: none; } }
+
 @keyframes inNext {
   0% {
     -webkit-transform: translate3d(30%, 0, 0);
@@ -549,22 +554,27 @@ MODULES
   100% {
     -webkit-transform: none;
     transform: none; } }
+
 @-webkit-keyframes outPrev {
   100% {
     -webkit-transform: translate3d(100%, 0, 0);
     transform: translate3d(100%, 0, 0); } }
+
 @keyframes outPrev {
   100% {
     -webkit-transform: translate3d(100%, 0, 0);
     transform: translate3d(100%, 0, 0); } }
+
 @-webkit-keyframes outNext {
   100% {
     -webkit-transform: translate3d(-100%, 0, 0);
     transform: translate3d(-100%, 0, 0); } }
+
 @keyframes outNext {
   100% {
     -webkit-transform: translate3d(-100%, 0, 0);
     transform: translate3d(-100%, 0, 0); } }
+
 /* Header */
 .slideshow-header {
   width: 100%;
@@ -620,26 +630,23 @@ MODULES
 @media screen and (max-width: 60em) {
   .slideshow-header h1 {
     font-size: 7em; } }
+
 @media screen and (max-width: 30em) {
   .wrap {
     height: 100vh !important;
     background: #3d4955; }
-
   .slideshow-header {
     top: 100%; }
-
   .slideshow-header h1 {
     padding-top: 5em; }
-
   .slideshow-header h1 i {
     font-size: 42%;
     max-width: 90%; }
-
   .codrops-icon {
     font-size: 1.5em; }
-
   .codrops-icon span {
     display: none; } }
+
 #go_down_slideshow {
   position: absolute;
   bottom: 20%;
@@ -702,7 +709,7 @@ span.site-intro__separator:after {
     border-radius: 2px;
     box-shadow: none;
     font-size: 14px;
-    font-family: "Exo", sans-serif;
+    font-family: "Droid Serif", serif;
     border: 1px solid #e5e5e5; }
     .blog-list input.form-control:focus {
       -moz-box-shadow: none;
@@ -720,19 +727,18 @@ span.site-intro__separator:after {
   .blog-items__container__blog-item h1 {
     margin-bottom: 3rem; }
   .blog-items__container__blog-item .post-body {
-    max-width: 900px;
+    max-width: 700px;
     margin: 2rem auto;
     text-align: left; }
   .blog-items__container__blog-item .comments {
-    max-width: 900px;
-    margin: 2rem auto;
-    text-align: left; }
+    max-width: 700px;
+    margin: 2rem auto; }
   .blog-items__container__blog-item img {
     max-width: 100%;
     height: auto; }
     @media (min-width: 800px) {
       .blog-items__container__blog-item img {
-        max-width: 900px; } }
+        max-width: 700px; } }
 
 .loading-spinner {
   width: 100%;
@@ -768,12 +774,15 @@ span.site-intro__separator:after {
 @-webkit-keyframes spin {
   100% {
     -webkit-transform: rotateZ(360deg); } }
+
 @-moz-keyframes spin {
   100% {
     -moz-transform: rotateZ(360deg); } }
+
 @-o-keyframes spin {
   100% {
     -moz-transform: rotateZ(360deg); } }
+
 @keyframes spin {
   100% {
     transform: rotateZ(360deg); } }

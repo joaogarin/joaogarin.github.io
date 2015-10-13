@@ -32,13 +32,13 @@
     margin-bottom:u(3rem);
   }
   .post-body{
-    max-width:900px;
+    max-width:700px;
     margin:u(2rem) auto;
     text-align:left;
   }
 
   .comments {
-    max-width:900px;
+    max-width:700px;
     margin:u(2rem) auto;
   }
 
@@ -47,7 +47,7 @@
     height:auto;
 
     @include breakpoint($breakpoint-narrow){
-      max-width:900px;
+      max-width:700px;
     }
   }
 
