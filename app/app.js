@@ -14,12 +14,12 @@ var app = angular.module("app", ["ngRoute", "ngAnimate", "ngSanitize", "app.cont
     }]).config(["$routeProvider", "$locationProvider", "$disqusProvider",
     function ($routeProvider, $locationProvider, $disqusProvider) {
 
-        $locationProvider.hashPrefix('!');
+        //$locationProvider.hashPrefix('!');
         $disqusProvider.setShortname = "joaogarin";
 
-        return $routeProvider.when("/", {
-            redirectTo: "/home"
-        }).when("/home", {
+        $routeProvider.when("/home", {
+            redirectTo: "/"
+        }).when("/", {
             templateUrl: "app/views/home.html"
         }).when("/about", {
             templateUrl: "app/views/about.html"
@@ -30,6 +30,8 @@ var app = angular.module("app", ["ngRoute", "ngAnimate", "ngSanitize", "app.cont
         }).otherwise({
             redirectTo: "/404"
         });
+
+        $locationProvider.html5Mode(true);
     }
 ]);
 
