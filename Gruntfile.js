@@ -38,10 +38,31 @@ module.exports = function(grunt) {
             }
         },
 
+        copy: {
+            main: {
+                files: [{
+                    //for jquery files
+                    expand: true,
+                    dot: true,
+                    cwd: 'bower_components/jquery/dist',
+                    src: ['jquery.min.js', 'jquery.min.map'],
+                    dest: 'dist/js'
+                },
+                {
+                    //for font-awesome
+                    expand: true,
+                    dot: true,
+                    cwd: 'bower_components/fontawesome',
+                    src: ['fonts/*'],
+                    dest: 'dist'
+                }]
+            }
+        },
+
         uglify: {
             dist: {
                 files: {
-                    'dist/app.js': [ 'dist/app.js' ]
+                    'dist/js/app.js': [ 'dist/js/app.js' ]
                 },
                 options: {
                     mangle: false,
@@ -52,7 +73,7 @@ module.exports = function(grunt) {
         cssmin: {
             combine: {
                 files: {
-                    'dist/main.css': ['styles/main.css']
+                    'dist/css/main.css': ['bower_components/fontawesome/css/font-awesome.min.css', 'styles/main.css', 'styles/vendor/animate.css']
                 }
             },
             add_banner: {
@@ -60,7 +81,7 @@ module.exports = function(grunt) {
                     banner: '/* My minified admin css file */'
                 },
                 files: {
-                    'dist/main.css': ['dist/main.css']
+                    'dist/css/main.css': ['dist/css/main.css']
                 }
             }
         },
@@ -94,7 +115,7 @@ module.exports = function(grunt) {
                     'scripts/vendor/classie.js',
                     'scripts/vendor/slideshowMockup.js',
                     'app/*.js' ],
-                dest: 'dist/app.js'
+                dest: 'dist/js/app.js'
             }
         },
 
@@ -114,14 +135,14 @@ module.exports = function(grunt) {
         watch: {
             dev: {
                 files: [ 'Gruntfile.js', 'app/*.js', '*.html','styles/*.*','styles/_*.scss' ],
-                tasks: [ 'jshint','html2js:dist','sass', 'concat:dist', 'clean:temp','cssmin' ],
+                tasks: [ 'jshint','html2js:dist', 'copy:main','sass', 'concat:dist', 'clean:temp','cssmin' ],
                 options: {
                     atBegin: true
                 }
             },
             min: {
                 files: [ 'Gruntfile.js', 'app/*.js', '*.html','styles/*.*','styles/_*.scss' ],
-                tasks: [ 'jshint','html2js:dist','sass', 'concat:dist', 'clean:temp', 'uglify:dist','cssmin' ],
+                tasks: [ 'jshint','html2js:dist','copy:main','sass', 'concat:dist', 'clean:temp', 'uglify:dist','cssmin' ],
                 options: {
                     atBegin: true
                 }
@@ -150,6 +171,7 @@ module.exports = function(grunt) {
         }
     });
 
+    grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-sass');

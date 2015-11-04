@@ -142,7 +142,7 @@ angular.module("app").factory('BlogSinglePost', function($http,config) {
 
     Post.getPost = function(nid){
 
-        $http.get(config.service_url + 'node/' + nid).
+        $http.get(config.service_url + 'node/' + nid + '?_format=json').
             success(function(data, status, headers) {
                 // this callback will be called asynchronously
                 // when the response is available
@@ -178,7 +178,7 @@ angular.module("app").factory('BlogSinglePost', function($http,config) {
 
     Post.getImage = function(fid,callback){
 
-        $http.get(config.service_url + 'entity/file/' + fid).
+        $http.get(config.service_url + 'entity/file/' + fid + '?_format=json').
             success(function(data, status, headers, config) {
                 // this callback will be called asynchronously
                 // when the response is available

@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA,iCAAiC;EAC/B,UAAU,EAAC,MAAM;EACjB,aAAa,EAAC,OAAO;EAErB,oCAAE;IACA,aAAa,EAAC,OAAO;EAGvB,oCAAE;IACA,aAAa,EAAC,OAAO;EAGvB,4CAAU;IACR,SAAS,EAAC,KAAK;IACf,MAAM,EAAC,YAAY;IACnB,UAAU,EAAC,IAAI;EAGjB,qCAAG;IACD,SAAS,EAAC,IAAI;IACd,MAAM,EAAC,IAAI",
-"sources": ["blog_items_item.scss"],
-"names": [],
-"file": "blog_items_item.css"
-}
